@@ -1,0 +1,43 @@
+https://www.freecodecamp.org/news/how-to-create-and-publish-your-first-npm-package/
+https://pauloe-me.medium.com/typescript-npm-package-publishing-a-beginners-guide-40b95908e69c
+
+
+create package directory (e.g. 'package'), then:
+1. git init
+
+2. npm init
+   package name: hello-npm-package
+   ...
+
+3. rename: "name": "@kkopicera-sh/hello-npm-package"
+("@user-name/package-name" -> scoped package - there will be no problem that package with this name already exists)
+
+3. add "type": "module" to package.json
+exemplary package.json:
+{
+  "name": "@kkopicera-sh/hello-npm-package",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
+4. write your code in index.js, e.g.:
+function helloNpm() {
+  return "hello NPM"
+}
+console.log('npm package initialized')
+export { helloNpm };
+
+5. log in to your npm account: (first signup: https://www.npmjs.com/signup)
+npm login (provide your username and password)
+
+6. npm publish --access=public
+
+7. go to your app and install the package:
+npm i @kkopicera-sh/hello-npm-package
