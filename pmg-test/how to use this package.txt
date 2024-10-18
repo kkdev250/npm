@@ -1,0 +1,2 @@
+1. npm i @kkopicera-sh/pmg-input
+2. import { Header } from "@kkopicera-sh/pmg-input";
